@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { InicioComponent } from './inicio/inicio.component';
+import { InicioComponent } from './modules/inicio/page/inicio/inicio.component';
+
 
 const routes: Routes = [
   //RUTA INICIAL / PRINCIPAL AL COMPONENTE
-  {path:"inicio", component: InicioComponent},
+  {path:"", component: InicioComponent },
 
   // CARGA PEREZOSA -> RUTA AL MODULO INICIO
   // loadChildren: indica que será ruta hija del módulo raíz

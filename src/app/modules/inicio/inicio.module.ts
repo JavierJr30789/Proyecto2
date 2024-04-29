@@ -2,16 +2,27 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { InicioRoutingModule } from './inicio-routing.module';
+
+//VISTAS - PAGINAS
 import { InicioComponent } from './page/inicio/inicio.component';
+//COMPONENTE LOCALp
+import { CardComponent } from './components/card/card.component';
+
+// COMPONENTES DE MATERIAL
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
   declarations: [
-    InicioComponent
+    InicioComponent,
+    CardComponent
   ],
   imports: [
     CommonModule,
-    InicioRoutingModule
+    InicioRoutingModule,
+    MatButtonModule,
+    MatCardModule
   ]
 })
 export class InicioModule { }
