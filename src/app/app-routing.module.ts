@@ -11,8 +11,12 @@ const routes: Routes = [
   // loadChildren: indica que será ruta hija del módulo raíz
   // ()=>: Funcion flecha que importará la dirección del módulo
   // .then: Promesa que nos devolverá un valor resuelto o rechazado
-  {path:"",loadChildren:()=>import('./modules/inicio/inicio.module').then(m=>m.InicioModule)
-  }
+  {
+    path:"",loadChildren:()=>import('./modules/inicio/inicio.module').then(m=>m.InicioModule)
+  },
+  {
+    path:"",loadChildren:()=>import('./modules/producto/producto.module').then(m=>m.ProductoModule)
+  },
   
 ];
 
