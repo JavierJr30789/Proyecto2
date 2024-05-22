@@ -5,6 +5,12 @@ import { AutentificacionRoutingModule } from './autentificacion-routing.module';
 // VISTAS DE AUTENTIFICACIÓN
 import { RegistroComponent } from './page/registro/registro.component';
 import { IniciosesionComponent } from './page/iniciosesion/iniciosesion.component';
+// Componentes de material
+import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
+
 
 
 @NgModule({
@@ -14,11 +20,19 @@ import { IniciosesionComponent } from './page/iniciosesion/iniciosesion.componen
   ],
   imports: [
     CommonModule,
-    AutentificacionRoutingModule
+    AutentificacionRoutingModule,
+    MatIconModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule
   ],
   exports:[
     RegistroComponent,
-    IniciosesionComponent
+    IniciosesionComponent,
+    MatIconModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule
   ]
 })
 export class AutentificacionModule { }
