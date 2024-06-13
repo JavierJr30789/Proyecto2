@@ -32,14 +32,16 @@ export class RegistroComponent {
       rol: this.usuarios.rol
     }
 
+
     //enviamos los nuevos registros por medio del metodo push a la coleccion
     //funcion para limpiar los inputs del formulario
     this.coleccionUsuarios.push(credenciales);
 
+    alert("te registraste con exito");
     //llamamos a la funcion para vaciar los inputs del formulario
     this.limpiarinputs();
     //por consola
-    console.log(credenciales);
+   // console.log(credenciales);
   }
 
   limpiarinputs() {
@@ -47,11 +49,11 @@ export class RegistroComponent {
      
      */
     const input = {
-      uid: this.usuarios.uid = "",
-      nombre: this.usuarios.nombre = "",
-      apellido: this.usuarios.apellido = "",
-      email: this.usuarios.email = "",
-      password: this.usuarios.password = "",
+      uid: this.usuarios.uid = '',
+      nombre: this.usuarios.nombre = '',
+      apellido: this.usuarios.apellido = '',
+      email: this.usuarios.email = '',
+      password: this.usuarios.password = '',
       rol: this.usuarios.rol
     }
 
