@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
+//Servicio de autentificacion
+import { AuthService } from '../../services/auth.service';
+//Servicio de rutas que otorga Angular
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-registro',
@@ -21,27 +26,47 @@ export class RegistroComponent {
 
   //Crear una coleccion para usuarios
   coleccionUsuarios: Usuario[] = [];
-  //Funcion para el registro
-  registrar() {
+
+  //Referenciamos a nuestro servicio
+  constructor(
+    public servicioAuth: AuthService,
+    public servicioRutas: Router
+  ) { }
+  //Funcion asincronica para el registro
+  async registrar() {
     const credenciales = {
-      uid: this.usuarios.uid,
-      nombre: this.usuarios.nombre,
-      apellido: this.usuarios.apellido,
+      //uid: this.usuarios.uid,
+      //nombre: this.usuarios.nombre,
+      //apellido: this.usuarios.apellido,
       email: this.usuarios.email,
       password: this.usuarios.password,
-      rol: this.usuarios.rol
+      //  rol: this.usuarios.rol
     }
 
+    //const "res"  = resguarda una respuesta
+    const res = await this.servicioAuth.registrar(credenciales.email, credenciales.password)
+      //el metodo THEN nos devueve la respuesta esperada por a promesa
+      .then(res => {
+        alert("ha agregado un usuario con exito :D")
 
+        //accedemos al servicio rutas -> metodo navigate
+        //metodo NAVIGATE = permite dirigirnos a diferentes vistas
+        this.servicioRutas.navigate(['/inicio'])
+      })
+
+      //el metodo CATCH toma una falla y la vuelve un Error
+      .catch(error => {
+        alert("hubo un problema al registrar un nuevo usuario :c")
+      })
     //enviamos los nuevos registros por medio del metodo push a la coleccion
     //funcion para limpiar los inputs del formulario
-    this.coleccionUsuarios.push(credenciales);
+    // this.coleccionUsuarios.push(credenciales);
 
-    alert("te registraste con exito");
+    // alert("te registraste con exito");
     //llamamos a la funcion para vaciar los inputs del formulario
     this.limpiarinputs();
     //por consola
-   // console.log(credenciales);
+    // console.log(credenciales);
   }
 
   limpiarinputs() {
