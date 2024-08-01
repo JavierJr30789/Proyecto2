@@ -1,37 +1,24 @@
 <div class="container">
-    <div class="row">
-        <i class="material-icons" style="font-size: 200px">person</i>
+  <div class="row">
+      <h1>Inicia Sesión</h1>
 
-        <!--Intrese el email-->
-        <mat-form-field appearance="fill">
-            <mat-label>Ingrese su Email  </mat-label>
-            <input matInput placeholder="Ej:pepe432@gmail.com">
-            <mat-icon matSuffix>login</mat-icon>
- 
-        </mat-form-field>
+      <i class="material-icons" style="font-size: 200px;">person</i>
+      
+      <mat-form-field appearance="fill">
+          <mat-label>Ingrese su email:</mat-label>
+          <input [(ngModel)]="usuarioIngresado.email" matInput placeholder="Ej: pepitoperez2022@gmail.com" required>
+      </mat-form-field>
 
-        <!--Ingrese su contraseña-->
-        <mat-form-field>
-            <mat-label>Ingrese su contraseña</mat-label>
-            <input matInput [type]="hide ? 'password' : 'text'"#input minlength="6" required="">
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-            <mat-hint align="start">Minimo:6/{{input.value.length}}</mat-hint>
-          </mat-form-field>
+      <mat-form-field>
+          <mat-label>Ingrese su contraseña:</mat-label>
+          <input [(ngModel)]="usuarioIngresado.password" matInput [type]="hide ? 'password' : 'text'" #input minlength="6" required>
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-hint align="start">Mínimo:6/{{input.value.length}}</mat-hint>
+      </mat-form-field>
 
-       <!--rol del usuario-->
-       <mat-form-field>
-        <mat-label>seleccione un rol:</mat-label>
-  <mat-select [(ngModel)]= "user" required>
-    <mat-option value="Admin">Administrador</mat-option>
-    <mat-option value="Vis">Visitante</mat-option>
-  </mat-select>
-</mat-form-field>
-
-          <!--Botón para Iniciar sesion-->
-          <button class="boton" mat-raised-button color="primary" class="boton" (click)= "iniciarsesion()">Iniciar sesion</button>
-    </div>
+      <button class="boton" mat-raised-button color="primary" (click)="iniciarSesion()">Iniciar Sesión</button>
+  </div>
 </div>
-
 

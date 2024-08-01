@@ -1,45 +1,50 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+// ARCHIVO DE RUTAS DEL MÓDULO
 import { AutentificacionRoutingModule } from './autentificacion-routing.module';
-// VISTAS DE AUTENTIFICACIÓN
-import { RegistroComponent } from './page/registro/registro.component';
-import { IniciosesionComponent } from './page/iniciosesion/iniciosesion.component';
-// Componentes de material
-import {MatIconModule} from '@angular/material/icon';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatButtonModule} from '@angular/material/button';
-import {MatSelectModule} from '@angular/material/select';
 
-//Componentes Angular
+// VISTAS DEL MÓDULO AUTENTIFICACIÓN
+import { RegistroComponent } from './page/registro/registro.component';
+import { InicioSesionComponent } from './page/iniciosesion/iniciosesion.component';
+
+// COMPONENTES DE MATERIAL
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+
+// COMPONENTES DE ANGULAR
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     RegistroComponent,
-    IniciosesionComponent
+    InicioSesionComponent
+    
   ],
   imports: [
     CommonModule,
     AutentificacionRoutingModule,
-    MatIconModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatButtonModule,
-   MatSelectModule,
-    //Angular
-    FormsModule
-  ],
-  exports:[
-    RegistroComponent,
-    IniciosesionComponent,
+    // MATERIAL
     MatIconModule,
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
     MatSelectModule,
-    //Angular
+    // ANGULAR
+    FormsModule,
+  ],
+  exports: [
+
+RegistroComponent,
+InicioSesionComponent,
+    MatIconModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatSelectModule,
     FormsModule
   ]
 })

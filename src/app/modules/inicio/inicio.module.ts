@@ -5,7 +5,7 @@ import { InicioRoutingModule } from './inicio-routing.module';
 
 //VISTAS - PAGINAS
 import { InicioComponent } from './page/inicio/inicio.component';
-//COMPONENTE LOCALp
+//COMPONENTE LOCAL
 import { CardComponent } from './components/card/card.component';
 
 // COMPONENTES DE MATERIAL
