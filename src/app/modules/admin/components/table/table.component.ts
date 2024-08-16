@@ -89,7 +89,7 @@ export class TableComponent {
         alert("No se ha podido eliminar el producto \n" + error);
       })
   }
-  //Fucion para eliminar definitivamente al producto
+  
   mostrarEditar(productoSeleccionado: Producto) {
     this.productoSeleccionado = productoSeleccionado;
 

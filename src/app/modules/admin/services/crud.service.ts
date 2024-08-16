@@ -16,9 +16,9 @@ export class CrudService {
   }
 
   // CREAR productos
-  crearProducto(producto: Producto){
+  crearProducto(producto: Producto) {
     return new Promise(async (resolve, reject) => {
-      try{
+      try {
         // Creamos número identificativo para el producto en la base de datos
         const idProducto = this.database.createId();
 
@@ -28,14 +28,14 @@ export class CrudService {
         const resultado = await this.productosCollection.doc(idProducto).set(producto);
 
         resolve(resultado);
-      }catch(error){
+      } catch (error) {
         reject(error);
       }
     })
   }
 
   // OBTENER productos
-  obtenerProducto(){
+  obtenerProducto() {
     // snapshotChanges -> toma una captura del estado de los datos
     // pipe -> funciona como una tubería que retorna el nuevo arreglo de datos
     // map -> "mapea" o recorre esa nueva información
@@ -44,21 +44,21 @@ export class CrudService {
   }
 
   // EDITAR productos
-modificarProducto(idProducto: string, nuevaData: Producto){
-  //accedemos a la coleccion, buscamos por ID y actualizamos informacion
-  return this.database.collection('producto').doc(idProducto).update(nuevaData);
+  modificarProducto(idProducto: string, nuevaData: Producto) {
+    //accedemos a la coleccion, buscamos por ID y actualizamos informacion
+    return this.database.collection('producto').doc(idProducto).update(nuevaData);
 
-}
+  }
 
   // ELIMINAR productos
-  eliminarProducto(idProducto: string){
-      return new Promise((resolve, reject) => {
-      try{
+  eliminarProducto(idProducto: string) {
+    return new Promise((resolve, reject) => {
+      try {
         //accedo a la coleccion, busco su ID y lo elimino
-        const respuesta =this.productosCollection.doc(idProducto).delete();
+        const respuesta = this.productosCollection.doc(idProducto).delete();
         resolve(respuesta)
       }
-      catch(error){
+      catch (error) {
         reject(error);
       }
     })
