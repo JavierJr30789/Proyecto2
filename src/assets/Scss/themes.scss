@@ -1,0 +1,34 @@
+/*importamos mediante @use a angular material*/
+@use '@angular/material' as mat;
+/**/
+@include mat.core();
+
+/*definimos la variable en donde con la funcion mat.define-light-theme configuraremos la paleta de colores*/
+$light-theme: mat.define-light-theme(
+    (
+        color: (
+primary: mat.define-palette(mat.$cyan-palette,400),
+accent: mat.define-palette(mat.$light-green-palette, A400),
+//warn:
+        ), 
+        typography: mat.define-typography-config(),
+        density: 0,
+    )
+);
+
+$dark-theme: mat.define-dark-theme(
+    (
+        color: (
+primary: mat.define-palette(mat.$deep-purple-palette,A200),
+accent: mat.define-palette(mat.$pink-green-palette, 300),
+//warn:
+        ), 
+        typography: mat.define-typography-config(),
+        density: 0,
+    )
+
+);
+
+
+/*para aplicar los temas utilizamos el @include y hacemos referencia dentro de los parentesis la paleta que acabamos de crear*/
+@include mat.all-component-theme($dark-theme);
