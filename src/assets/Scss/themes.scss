@@ -1,4 +1,5 @@
 /*importamos mediante @use a angular material*/
+@import '~@angular/material/theming';
 @use '@angular/material' as mat;
 /**/
 @include mat.core();
@@ -20,7 +21,7 @@ $dark-theme: mat.define-dark-theme(
     (
         color: (
 primary: mat.define-palette(mat.$deep-purple-palette,A200),
-accent: mat.define-palette(mat.$pink-green-palette, 300),
+accent: mat.define-palette(mat.$pink-palette, 300),
 //warn:
         ), 
         typography: mat.define-typography-config(),
